@@ -1,0 +1,358 @@
+{
+  "categories": [
+    {
+      "id": "coffee",
+      "name": "커피",
+      "items": [
+        {
+          "id": "americano",
+          "name": "아메리카노",
+          "name_en": "Americano",
+          "price": 4500,
+          "description": "진한 에스프레소에 물",
+          "description_en": "Espresso with hot water",
+          "options": ["temperature", "ice_amount", "water_amount", "shot"]
+        },
+        {
+          "id": "latte",
+          "name": "카페라떼",
+          "name_en": "Cafe Latte",
+          "price": 5000,
+          "description": "부드러운 우유 거품",
+          "description_en": "Smooth steamed milk",
+          "options": ["temperature", "ice_amount", "milk_amount", "shot"]
+        },
+        {
+          "id": "cappuccino",
+          "name": "카푸치노",
+          "name_en": "Cappuccino",
+          "price": 5000,
+          "description": "풍부한 우유 거품",
+          "description_en": "Rich milk foam",
+          "options": ["temperature", "ice_amount", "shot"]
+        },
+        {
+          "id": "vanilla_latte",
+          "name": "바닐라라떼",
+          "name_en": "Vanilla Latte",
+          "price": 5500,
+          "description": "달콤한 바닐라 시럽",
+          "description_en": "Sweet vanilla syrup",
+          "options": ["temperature", "ice_amount", "sweetness", "shot"]
+        },
+        {
+          "id": "caramel_macchiato",
+          "name": "카라멜 마끼아또",
+          "name_en": "Caramel Macchiato",
+          "price": 5800,
+          "description": "카라멜 드리즐",
+          "description_en": "Caramel drizzle",
+          "options": ["temperature", "ice_amount", "sweetness", "whipped_cream", "shot"]
+        },
+        {
+          "id": "espresso",
+          "name": "에스프레소",
+          "name_en": "Espresso",
+          "price": 4000,
+          "description": "진한 한 잔",
+          "description_en": "Bold single shot",
+          "options": ["shot"]
+        },
+        {
+          "id": "cold_brew",
+          "name": "콜드브루",
+          "name_en": "Cold Brew",
+          "price": 5200,
+          "description": "12시간 저온 추출, 깊은 풍미",
+          "description_en": "12-hour slow brew, deep flavor",
+          "options": ["ade_ice", "sweetness", "shot"]
+        }
+      ]
+    },
+    {
+      "id": "non_coffee",
+      "name": "논커피",
+      "items": [
+        {
+          "id": "green_tea",
+          "name": "녹차라떼",
+          "name_en": "Green Tea Latte",
+          "price": 5200,
+          "description": "고소한 녹차",
+          "description_en": "Nutty green tea",
+          "options": ["temperature", "ice_amount", "sweetness"]
+        },
+        {
+          "id": "chocolate",
+          "name": "초코라떼",
+          "name_en": "Chocolate Latte",
+          "price": 5500,
+          "description": "진한 초콜릿",
+          "description_en": "Rich chocolate",
+          "options": ["temperature", "ice_amount", "sweetness", "whipped_cream"]
+        },
+        {
+          "id": "strawberry_ade",
+          "name": "딸기에이드",
+          "name_en": "Strawberry Ade",
+          "price": 5500,
+          "description": "상큼한 딸기",
+          "description_en": "Fresh strawberry",
+          "options": ["ade_ice", "sweetness"]
+        },
+        {
+          "id": "lemon_ade",
+          "name": "레몬에이드",
+          "name_en": "Lemon Ade",
+          "price": 5200,
+          "description": "시원한 레몬",
+          "description_en": "Refreshing lemon",
+          "options": ["ade_ice", "sweetness"]
+        },
+        {
+          "id": "grapefruit_ade",
+          "name": "자몽에이드",
+          "name_en": "Grapefruit Ade",
+          "price": 5500,
+          "description": "상큼 쌉싸름한 자몽",
+          "description_en": "Tangy grapefruit",
+          "options": ["ade_ice", "sweetness"]
+        }
+      ]
+    },
+    {
+      "id": "juice",
+      "name": "주스",
+      "items": [
+        {
+          "id": "orange_juice",
+          "name": "오렌지 주스",
+          "name_en": "Orange Juice",
+          "price": 5000,
+          "description": "당일 착즙 오렌지",
+          "description_en": "Freshly squeezed orange",
+          "options": ["ade_ice", "sweetness"]
+        },
+        {
+          "id": "apple_juice",
+          "name": "사과 주스",
+          "name_en": "Apple Juice",
+          "price": 4800,
+          "description": "아삭하고 달콤한 사과",
+          "description_en": "Crisp sweet apple",
+          "options": ["ade_ice", "sweetness"]
+        },
+        {
+          "id": "mango_juice",
+          "name": "망고 주스",
+          "name_en": "Mango Juice",
+          "price": 5500,
+          "description": "진한 열대 망고",
+          "description_en": "Tropical mango",
+          "options": ["ade_ice", "sweetness"]
+        },
+        {
+          "id": "grape_juice",
+          "name": "포도 주스",
+          "name_en": "Grape Juice",
+          "price": 5200,
+          "description": "새콤달콤 적포도",
+          "description_en": "Sweet and tangy grape",
+          "options": ["ade_ice", "sweetness"]
+        }
+      ]
+    },
+    {
+      "id": "tea",
+      "name": "티/차",
+      "items": [
+        {
+          "id": "teabag_green",
+          "name": "녹차 (티백)",
+          "name_en": "Green Tea (Teabag)",
+          "price": 4000,
+          "description": "산뜻하고 깔끔한 녹차",
+          "description_en": "Light and clean green tea",
+          "options": ["temperature", "ice_amount", "tea_strength", "sweetness"]
+        },
+        {
+          "id": "teabag_chamomile",
+          "name": "캐모마일 (티백)",
+          "name_en": "Chamomile (Teabag)",
+          "price": 4500,
+          "description": "은은한 꽃향, 편안한 한 잔",
+          "description_en": "Floral and calming",
+          "options": ["temperature", "ice_amount", "tea_strength", "honey_amount"]
+        },
+        {
+          "id": "teabag_mint",
+          "name": "민트 (티백)",
+          "name_en": "Mint (Teabag)",
+          "price": 4500,
+          "description": "상쾌한 페퍼민트",
+          "description_en": "Refreshing peppermint",
+          "options": ["temperature", "ice_amount", "tea_strength", "sweetness"]
+        },
+        {
+          "id": "teabag_earl_grey",
+          "name": "얼그레이 (티백)",
+          "name_en": "Earl Grey (Teabag)",
+          "price": 4500,
+          "description": "베르가못 향의 클래식 홍차",
+          "description_en": "Classic black tea with bergamot",
+          "options": ["temperature", "ice_amount", "tea_strength", "sweetness"]
+        },
+        {
+          "id": "teabag_cream_caramel",
+          "name": "크림카라멜 (티백)",
+          "name_en": "Cream Caramel (Teabag)",
+          "price": 4800,
+          "description": "부드럽고 달콤한 크림 카라멜",
+          "description_en": "Smooth sweet cream caramel",
+          "options": ["temperature", "ice_amount", "tea_strength", "sweetness"]
+        },
+        {
+          "id": "ice_tea_peach",
+          "name": "복숭아 아이스티",
+          "name_en": "Peach Iced Tea",
+          "price": 4800,
+          "description": "달콤한 복숭아 향",
+          "description_en": "Sweet peach flavor",
+          "options": ["ade_ice", "sweetness"]
+        },
+        {
+          "id": "ice_tea_lemon",
+          "name": "레몬 아이스티",
+          "name_en": "Lemon Iced Tea",
+          "price": 4800,
+          "description": "상큼한 레몬 홍차",
+          "description_en": "Zesty lemon black tea",
+          "options": ["ade_ice", "sweetness"]
+        },
+        {
+          "id": "ice_tea_green",
+          "name": "그린 아이스티",
+          "name_en": "Green Iced Tea",
+          "price": 4800,
+          "description": "깔끔한 녹차 아이스티",
+          "description_en": "Clean green iced tea",
+          "options": ["ade_ice", "sweetness"]
+        },
+        {
+          "id": "omija_tea",
+          "name": "오미자차",
+          "name_en": "Omija Berry Tea",
+          "price": 5500,
+          "description": "새콤달콤, 피로 회복에 도움",
+          "description_en": "Sweet and sour berry tea",
+          "options": ["temperature", "ice_amount", "honey_amount", "tea_strength"]
+        },
+        {
+          "id": "citron_ginger_tea",
+          "name": "유자생강차",
+          "name_en": "Citron Ginger Tea",
+          "price": 5500,
+          "description": "유자와 생강의 따뜻한 조합",
+          "description_en": "Warm citron and ginger blend",
+          "options": ["temperature", "ice_amount", "honey_amount", "tea_strength"]
+        },
+        {
+          "id": "milk_tea",
+          "name": "밀크티",
+          "name_en": "Milk Tea",
+          "price": 5200,
+          "description": "부드러운 홍차와 우유의 조화",
+          "description_en": "Black tea with smooth milk",
+          "options": ["temperature", "ice_amount", "sweetness", "tea_strength"]
+        },
+        {
+          "id": "herb_tea",
+          "name": "허브티",
+          "name_en": "Herb Tea",
+          "price": 4800,
+          "description": "캐모마일·라벤더·히비스커스 블렌드",
+          "description_en": "Chamomile, lavender & hibiscus blend",
+          "options": ["temperature", "ice_amount", "honey_amount", "tea_strength"]
+        }
+      ]
+    },
+    {
+      "id": "dessert",
+      "name": "디저트",
+      "items": [
+        {
+          "id": "cheesecake",
+          "name": "치즈케이크",
+          "name_en": "Cheesecake",
+          "price": 6500,
+          "description": "뉴욕 스타일",
+          "description_en": "New York style",
+          "options": []
+        },
+        {
+          "id": "choco_cake",
+          "name": "초코 케이크",
+          "name_en": "Chocolate Cake",
+          "price": 6200,
+          "description": "진한 초콜릿의 부드러운 촉감",
+          "description_en": "Rich, moist chocolate cake",
+          "options": []
+        },
+        {
+          "id": "strawberry_cream_cake",
+          "name": "딸기 생크림 케이크",
+          "name_en": "Strawberry Cream Cake",
+          "price": 6800,
+          "description": "상큼한 딸기와 부드러운 생크림",
+          "description_en": "Fresh strawberries and whipped cream",
+          "options": []
+        },
+        {
+          "id": "tiramisu",
+          "name": "티라미수",
+          "name_en": "Tiramisu",
+          "price": 6500,
+          "description": "에스프레소 향 가득한 이탈리안 디저트",
+          "description_en": "Classic Italian espresso dessert",
+          "options": []
+        },
+        {
+          "id": "red_velvet",
+          "name": "레드벨벳 케이크",
+          "name_en": "Red Velvet Cake",
+          "price": 6600,
+          "description": "크림치즈 프로스팅의 클래식 케이크",
+          "description_en": "Classic cake with cream cheese frosting",
+          "options": []
+        },
+        {
+          "id": "croissant",
+          "name": "크로아상",
+          "name_en": "Croissant",
+          "price": 3800,
+          "description": "바삭한 버터",
+          "description_en": "Buttery and flaky",
+          "options": ["warm_up"]
+        },
+        {
+          "id": "blueberry_cookie",
+          "name": "블루베리 쿠키",
+          "name_en": "Blueberry Cookie",
+          "price": 2800,
+          "description": "블루베리가 가득한 수제 쿠키",
+          "description_en": "Homemade cookie packed with blueberries",
+          "options": ["warm_up"]
+        },
+        {
+          "id": "cookie",
+          "name": "초코칩 쿠키",
+          "name_en": "Chocolate Chip Cookie",
+          "price": 2500,
+          "description": "수제 쿠키",
+          "description_en": "Homemade cookie",
+          "options": ["warm_up"]
+        }
+      ]
+    }
+  ]
+}

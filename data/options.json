@@ -1,0 +1,114 @@
+{
+  "groups": {
+    "temperature": {
+      "name": "온도",
+      "name_en": "Temperature",
+      "required": true,
+      "choices": [
+        {"id": "hot", "name": "HOT", "name_en": "HOT", "extra_price": 0},
+        {"id": "ice", "name": "ICE", "name_en": "ICE", "extra_price": 0}
+      ]
+    },
+    "ice_amount": {
+      "name": "얼음",
+      "name_en": "Ice",
+      "required": true,
+      "visible_when": {"group": "temperature", "choice": "ice"},
+      "choices": [
+        {"id": "much", "name": "얼음 많이", "name_en": "Extra Ice", "extra_price": 0},
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "little", "name": "얼음 적게", "name_en": "Light Ice", "extra_price": 0}
+      ]
+    },
+    "water_amount": {
+      "name": "물",
+      "name_en": "Water",
+      "required": true,
+      "visible_when": {"group": "temperature", "choice": "hot"},
+      "choices": [
+        {"id": "much", "name": "물 많이", "name_en": "Extra Water", "extra_price": 0},
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "little", "name": "물 적게", "name_en": "Less Water", "extra_price": 0}
+      ]
+    },
+    "sweetness": {
+      "name": "당도",
+      "name_en": "Sweetness",
+      "required": true,
+      "choices": [
+        {"id": "less", "name": "덜 달게", "name_en": "Less Sweet", "extra_price": 0},
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "more", "name": "더 달게", "name_en": "Extra Sweet", "extra_price": 0}
+      ]
+    },
+    "whipped_cream": {
+      "name": "휘핑크림",
+      "name_en": "Whipped Cream",
+      "required": true,
+      "choices": [
+        {"id": "none", "name": "없음", "name_en": "None", "extra_price": 0},
+        {"id": "little", "name": "적게", "name_en": "Light", "extra_price": 0},
+        {"id": "much", "name": "많이", "name_en": "Extra", "extra_price": 300}
+      ]
+    },
+    "milk_amount": {
+      "name": "우유",
+      "name_en": "Milk",
+      "required": true,
+      "choices": [
+        {"id": "much", "name": "우유 많이", "name_en": "Extra Milk", "extra_price": 0},
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "little", "name": "우유 적게", "name_en": "Less Milk", "extra_price": 0}
+      ]
+    },
+    "shot": {
+      "name": "샷",
+      "name_en": "Espresso Shot",
+      "required": true,
+      "choices": [
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "extra", "name": "샷 추가", "name_en": "Extra Shot", "extra_price": 500}
+      ]
+    },
+    "ade_ice": {
+      "name": "얼음",
+      "name_en": "Ice",
+      "required": true,
+      "choices": [
+        {"id": "much", "name": "얼음 많이", "name_en": "Extra Ice", "extra_price": 0},
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "little", "name": "얼음 적게", "name_en": "Light Ice", "extra_price": 0}
+      ]
+    },
+    "warm_up": {
+      "name": "데우기",
+      "name_en": "Warm Up",
+      "required": true,
+      "choices": [
+        {"id": "no", "name": "차갑게", "name_en": "Serve Cold", "extra_price": 0},
+        {"id": "yes", "name": "데워주세요", "name_en": "Warm It Up", "extra_price": 0}
+      ]
+    },
+    "tea_strength": {
+      "name": "진하기",
+      "name_en": "Strength",
+      "required": true,
+      "choices": [
+        {"id": "light", "name": "연하게", "name_en": "Light", "extra_price": 0},
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "strong", "name": "진하게", "name_en": "Strong", "extra_price": 0}
+      ]
+    },
+    "honey_amount": {
+      "name": "꿀/당도",
+      "name_en": "Honey / Sweetness",
+      "required": true,
+      "choices": [
+        {"id": "none", "name": "없음", "name_en": "None", "extra_price": 0},
+        {"id": "less", "name": "적게", "name_en": "Light", "extra_price": 0},
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "more", "name": "많이", "name_en": "Extra", "extra_price": 200}
+      ]
+    }
+  }
+}
