@@ -14,11 +14,13 @@ from ui.widgets import create_button
 class MenuScreen(BaseScreen):
     """메뉴 선택 및 장바구니 화면."""
 
+    DEFAULT_CATEGORY = "coffee"
+
     def __init__(self, app) -> None:
         super().__init__(app)
         self.menu_items, self.option_groups_map = get_menu_loader()
         self.categories = get_categories(self.menu_items)
-        self.selected_category = self.categories[0][0] if self.categories else ""
+        self.selected_category = self.DEFAULT_CATEGORY if self.categories else ""
         self._category_buttons: dict[str, tk.Button] = {}
         self._category_wrappers: dict[str, tk.Frame] = {}
         self._menu_frame: tk.Frame | None = None
@@ -175,6 +177,9 @@ class MenuScreen(BaseScreen):
         self._pay_btn.pack(side="right", fill="x", expand=True, padx=(5, 0))
 
         self._select_category(self.selected_category)
+
+    def reset_to_default_category(self) -> None:
+        self.selected_category = self.DEFAULT_CATEGORY
 
     def on_show(self) -> None:
         self._refresh_texts()

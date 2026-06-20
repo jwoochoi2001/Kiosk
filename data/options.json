@@ -15,8 +15,8 @@
       "required": true,
       "visible_when": {"group": "temperature", "choice": "ice"},
       "choices": [
-        {"id": "much", "name": "얼음 많이", "name_en": "Extra Ice", "extra_price": 0},
         {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "much", "name": "얼음 많이", "name_en": "Extra Ice", "extra_price": 0},
         {"id": "little", "name": "얼음 적게", "name_en": "Light Ice", "extra_price": 0}
       ]
     },
@@ -26,8 +26,8 @@
       "required": true,
       "visible_when": {"group": "temperature", "choice": "hot"},
       "choices": [
-        {"id": "much", "name": "물 많이", "name_en": "Extra Water", "extra_price": 0},
         {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "much", "name": "물 많이", "name_en": "Extra Water", "extra_price": 0},
         {"id": "little", "name": "물 적게", "name_en": "Less Water", "extra_price": 0}
       ]
     },
@@ -36,8 +36,8 @@
       "name_en": "Sweetness",
       "required": true,
       "choices": [
-        {"id": "less", "name": "덜 달게", "name_en": "Less Sweet", "extra_price": 0},
         {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "less", "name": "덜 달게", "name_en": "Less Sweet", "extra_price": 0},
         {"id": "more", "name": "더 달게", "name_en": "Extra Sweet", "extra_price": 0}
       ]
     },
@@ -46,7 +46,8 @@
       "name_en": "Whipped Cream",
       "required": true,
       "choices": [
-        {"id": "none", "name": "없음", "name_en": "None", "extra_price": 0},
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "none", "name": "없게", "name_en": "None", "extra_price": 0},
         {"id": "little", "name": "적게", "name_en": "Light", "extra_price": 0},
         {"id": "much", "name": "많이", "name_en": "Extra", "extra_price": 300}
       ]
@@ -56,8 +57,8 @@
       "name_en": "Milk",
       "required": true,
       "choices": [
-        {"id": "much", "name": "우유 많이", "name_en": "Extra Milk", "extra_price": 0},
         {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "much", "name": "우유 많이", "name_en": "Extra Milk", "extra_price": 0},
         {"id": "little", "name": "우유 적게", "name_en": "Less Milk", "extra_price": 0}
       ]
     },
@@ -75,8 +76,8 @@
       "name_en": "Ice",
       "required": true,
       "choices": [
-        {"id": "much", "name": "얼음 많이", "name_en": "Extra Ice", "extra_price": 0},
         {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "much", "name": "얼음 많이", "name_en": "Extra Ice", "extra_price": 0},
         {"id": "little", "name": "얼음 적게", "name_en": "Light Ice", "extra_price": 0}
       ]
     },
@@ -94,8 +95,8 @@
       "name_en": "Strength",
       "required": true,
       "choices": [
-        {"id": "light", "name": "연하게", "name_en": "Light", "extra_price": 0},
         {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
+        {"id": "light", "name": "연하게", "name_en": "Light", "extra_price": 0},
         {"id": "strong", "name": "진하게", "name_en": "Strong", "extra_price": 0}
       ]
     },
@@ -104,9 +105,9 @@
       "name_en": "Honey / Sweetness",
       "required": true,
       "choices": [
+        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
         {"id": "none", "name": "없음", "name_en": "None", "extra_price": 0},
         {"id": "less", "name": "적게", "name_en": "Light", "extra_price": 0},
-        {"id": "normal", "name": "보통", "name_en": "Regular", "extra_price": 0},
         {"id": "more", "name": "많이", "name_en": "Extra", "extra_price": 200}
       ]
     }

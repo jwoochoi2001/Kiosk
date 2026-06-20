@@ -50,6 +50,15 @@
           "options": ["temperature", "ice_amount", "sweetness", "whipped_cream", "shot"]
         },
         {
+          "id": "cafe_mocha",
+          "name": "카페모카",
+          "name_en": "Cafe Mocha",
+          "price": 5800,
+          "description": "진한 초콜릿과 에스프레소",
+          "description_en": "Rich chocolate and espresso",
+          "options": ["temperature", "ice_amount", "sweetness", "whipped_cream", "shot"]
+        },
+        {
           "id": "espresso",
           "name": "에스프레소",
           "name_en": "Espresso",

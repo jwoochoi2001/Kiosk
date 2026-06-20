@@ -33,6 +33,11 @@ class OptionGroup:
         return self.name
 
     def default_choice_id(self) -> str:
+        preferred = ("normal", "none", "hot", "no")
+        choice_ids = {choice.id for choice in self.choices}
+        for choice_id in preferred:
+            if choice_id in choice_ids:
+                return choice_id
         return self.choices[0].id
 
     def get_choice(self, choice_id: str) -> OptionChoice | None:
