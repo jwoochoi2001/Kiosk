@@ -4,20 +4,16 @@ import tkinter as tk
 
 from ui import styles
 from ui.screens.base import BaseScreen
-from ui.widgets import create_button
 
 
 class CompleteScreen(BaseScreen):
-    """결제 완료 화면."""
+    """결제 완료 화면 (영수증 선택 전)."""
 
     def __init__(self, app) -> None:
         super().__init__(app)
         self._done_label: tk.Label | None = None
         self._order_number_label: tk.Label | None = None
         self._summary_label: tk.Label | None = None
-        self._countdown_label: tk.Label | None = None
-        self._home_btn: tk.Button | None = None
-        self._remaining_seconds = styles.COMPLETE_AUTO_HOME_SECONDS
         self._timer_id: str | None = None
         self._build()
 
@@ -60,27 +56,10 @@ class CompleteScreen(BaseScreen):
         )
         self._summary_label.pack(pady=(0, 20))
 
-        self._countdown_label = tk.Label(
-            center,
-            text="",
-            font=styles.FONT_BODY,
-            fg=styles.TEXT,
-            bg=styles.BG,
-        )
-        self._countdown_label.pack(pady=(0, 30))
-
-        self._home_btn = create_button(
-            center,
-            text="",
-            style="primary",
-            command=self._go_home,
-            padx=50,
-            pady=18,
-        )
-        self._home_btn.pack()
-
     def on_show(self) -> None:
-        self._refresh_texts()
+        if self._done_label:
+            self._done_label.configure(text=self.app.t("payment_done"))
+
         order = self.app.last_order
         if order and self._order_number_label and self._summary_label:
             self._order_number_label.configure(text=self.app.t("order_number", number=order["number"]))
@@ -90,45 +69,22 @@ class CompleteScreen(BaseScreen):
             ]
             if order.get("order_type"):
                 parts.insert(0, order["order_type"])
-            if order.get("receipt"):
-                parts.append(self.app.t("receipt_printed"))
             self._summary_label.configure(text="  ·  ".join(parts))
 
-        self._remaining_seconds = styles.COMPLETE_AUTO_HOME_SECONDS
-        self._update_countdown()
         self._start_timer()
-
-    def _refresh_texts(self) -> None:
-        if self._done_label:
-            self._done_label.configure(text=self.app.t("payment_done"))
-        if self._home_btn:
-            self._home_btn.configure(text=self.app.t("go_home"))
 
     def on_hide(self) -> None:
         self._cancel_timer()
 
     def _start_timer(self) -> None:
         self._cancel_timer()
-        self._timer_id = self.after(1000, self._tick)
-
-    def _tick(self) -> None:
-        self._remaining_seconds -= 1
-        if self._remaining_seconds <= 0:
-            self._go_home()
-            return
-        self._update_countdown()
-        self._timer_id = self.after(1000, self._tick)
-
-    def _update_countdown(self) -> None:
-        if self._countdown_label:
-            self._countdown_label.configure(
-                text=self.app.t("auto_home", seconds=self._remaining_seconds)
-            )
+        self._timer_id = self.after(styles.COMPLETE_TO_RECEIPT_SECONDS * 1000, self._go_receipt)
 
     def _cancel_timer(self) -> None:
         if self._timer_id:
             self.after_cancel(self._timer_id)
             self._timer_id = None
 
-    def _go_home(self) -> None:
-        self.app.reset_to_welcome()
+    def _go_receipt(self) -> None:
+        self._timer_id = None
+        self.app.show_screen("receipt")

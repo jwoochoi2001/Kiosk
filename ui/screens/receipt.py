@@ -73,4 +73,4 @@ class ReceiptScreen(BaseScreen):
 
     def _choose(self, wants_receipt: bool) -> None:
         self.app.set_receipt_wanted(wants_receipt)
-        self.app.show_screen("complete")
+        self.app.reset_to_welcome()

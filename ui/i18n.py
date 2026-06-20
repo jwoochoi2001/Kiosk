@@ -66,6 +66,9 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
     "method_cash": {"ko": "현금", "en": "Cash"},
     "method_mobile": {"ko": "모바일 결제", "en": "Mobile Pay"},
     "paid_with": {"ko": "{method} 결제", "en": "Paid via {method}"},
+    # processing
+    "payment_processing": {"ko": "결제 중입니다", "en": "Processing Payment"},
+    "payment_processing_sub": {"ko": "잠시만 기다려 주세요", "en": "Please wait a moment"},
     # receipt
     "receipt_ask": {"ko": "영수증을 받으시겠습니까?", "en": "Would you like a receipt?"},
     "receipt_no": {"ko": "괜찮아요", "en": "No Thanks"},

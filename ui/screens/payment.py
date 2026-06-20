@@ -235,4 +235,4 @@ class PaymentScreen(BaseScreen):
             return
 
         self.app.place_order(payment_method=method)
-        self.app.show_screen("receipt")
+        self.app.show_screen("processing")

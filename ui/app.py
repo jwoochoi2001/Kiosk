@@ -10,6 +10,7 @@ from ui.i18n import translate
 from ui.order_types import ORDER_TYPES
 from ui.screens.receipt import ReceiptScreen
 from ui.screens.complete import CompleteScreen
+from ui.screens.processing import ProcessingScreen
 from ui.screens.menu import MenuScreen
 from ui.screens.order_confirm import OrderConfirmScreen
 from ui.screens.payment import PaymentScreen
@@ -45,8 +46,9 @@ class KioskApp(tk.Tk):
             "menu": MenuScreen,
             "order_confirm": OrderConfirmScreen,
             "payment": PaymentScreen,
-            "receipt": ReceiptScreen,
+            "processing": ProcessingScreen,
             "complete": CompleteScreen,
+            "receipt": ReceiptScreen,
         }
         for name, screen_class in screen_classes.items():
             screen = screen_class(self)
@@ -86,6 +88,9 @@ class KioskApp(tk.Tk):
     def reset_to_welcome(self) -> None:
         self.cart.clear()
         self.order_type = None
+        menu_screen = self._screens.get("menu")
+        if menu_screen is not None:
+            menu_screen.reset_to_default_category()
         self.show_screen("welcome")
 
     def place_order(self, payment_method: str) -> None:
