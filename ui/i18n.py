@@ -22,6 +22,10 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
     "alert_empty_cart": {"ko": "메뉴를 먼저 선택해 주세요.", "en": "Please add items to your cart first."},
     "clear_cart_title": {"ko": "장바구니 초기화", "en": "Clear Cart"},
     "clear_cart_msg": {"ko": "장바구니를 비울까요?", "en": "Clear all items from your cart?"},
+    "idle_warning": {
+        "ko": "선택하지 않으면 {seconds}초 후 처음 화면으로 돌아갑니다",
+        "en": "Returning home in {seconds}s if no selection is made",
+    },
     # categories
     "category_coffee": {"ko": "커피", "en": "Coffee"},
     "category_non_coffee": {"ko": "논커피", "en": "Non-Coffee"},

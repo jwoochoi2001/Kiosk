@@ -28,6 +28,9 @@ class MenuScreen(BaseScreen):
         self._total_label: tk.Label | None = None
         self._count_label: tk.Label | None = None
         self._idle_timer: str | None = None
+        self._idle_remaining = 0
+        self._idle_warning_frame: tk.Frame | None = None
+        self._idle_warning_label: tk.Label | None = None
         self._home_btn: tk.Button | None = None
         self._title_label: tk.Label | None = None
         self._cart_title: tk.Label | None = None
@@ -176,6 +179,23 @@ class MenuScreen(BaseScreen):
         )
         self._pay_btn.pack(side="right", fill="x", expand=True, padx=(5, 0))
 
+        self._idle_warning_frame = tk.Frame(
+            self,
+            bg=styles.ACCENT_LIGHT,
+            highlightbackground=styles.PRIMARY,
+            highlightthickness=1,
+        )
+        self._idle_warning_label = tk.Label(
+            self._idle_warning_frame,
+            text="",
+            font=styles.FONT_SMALL,
+            fg=styles.PRIMARY_DARK,
+            bg=styles.ACCENT_LIGHT,
+            padx=18,
+            pady=10,
+        )
+        self._idle_warning_label.pack()
+
         self._select_category(self.selected_category)
 
     def reset_to_default_category(self) -> None:
@@ -203,24 +223,46 @@ class MenuScreen(BaseScreen):
 
     def on_hide(self) -> None:
         self._cancel_idle_timer()
+        self._hide_idle_warning()
 
     def _start_idle_timer(self) -> None:
         self._cancel_idle_timer()
-        self._idle_timer = self.after(styles.MENU_IDLE_SECONDS * 1000, self._idle_timeout)
+        self._hide_idle_warning()
+        self._idle_remaining = styles.MENU_IDLE_SECONDS
+        self._idle_timer = self.after(1000, self._idle_tick)
 
     def _cancel_idle_timer(self) -> None:
         if self._idle_timer:
             self.after_cancel(self._idle_timer)
             self._idle_timer = None
 
+    def _idle_tick(self) -> None:
+        self._idle_remaining -= 1
+        if self._idle_remaining <= 0:
+            self._idle_timer = None
+            self._hide_idle_warning()
+            if self.app._current_screen_name == "menu":
+                self.app.reset_to_welcome()
+            return
+
+        if self._idle_remaining <= styles.MENU_IDLE_WARNING_SECONDS:
+            self._show_idle_warning(self._idle_remaining)
+
+        self._idle_timer = self.after(1000, self._idle_tick)
+
+    def _show_idle_warning(self, seconds: int) -> None:
+        if self._idle_warning_label and self._idle_warning_frame:
+            self._idle_warning_label.configure(text=self.app.t("idle_warning", seconds=seconds))
+            self._idle_warning_frame.place(relx=0.5, rely=0.97, anchor="s")
+            self._idle_warning_frame.lift()
+
+    def _hide_idle_warning(self) -> None:
+        if self._idle_warning_frame:
+            self._idle_warning_frame.place_forget()
+
     def _touch_activity(self, _event=None) -> None:
         if self.app._current_screen_name == "menu":
             self._start_idle_timer()
-
-    def _idle_timeout(self) -> None:
-        self._idle_timer = None
-        if self.app._current_screen_name == "menu":
-            self.app.reset_to_welcome()
 
     def _go_home(self) -> None:
         self._touch_activity()
